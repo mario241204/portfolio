@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Cárcel - Programador Junior</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#e0f2fe', // sky-100
+                            DEFAULT: '#0284c7', // sky-600
+                            dark: '#0369a1', // sky-700
+                            navy: '#0c4a6e', // sky-900
+                        },
+                        aws: '#FF9900',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Toque sutil para las barras de desplazamiento */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #0284c7; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0369a1; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 shadow-neutral-100">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-brand-navy">Mario<span class="text-brand">Cárcel</span></span>
+                    <span class="ml-3 inline-flex items-center rounded-full bg-brand-light px-2.5 py-0.5 text-xs font-medium text-brand-dark">Junior Dev</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#inicio" class="text-gray-600 hover:text-brand transition">Inicio</a>
+                    <a href="#proyectos" class="text-gray-600 hover:text-brand transition">Proyectos</a>
+                    <a href="#minijuegos" class="text-gray-600 hover:text-brand transition">MiniJuegos</a>
+                    <a href="#contacto" class="bg-brand text-white px-4 py-2 rounded-lg hover:bg-brand-dark transition">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio" class="py-20 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+            <div class="flex-1 text-center md:text-left md:pr-10">
+                <p class="text-brand font-semibold mb-2">Hola, mi nombre es</p>
+                <h1 class="text-5xl md:text-6xl font-extrabold text-brand-navy mb-4">Mario Cárcel</h1>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-600 mb-6">Programador Junior en <span class="text-gray-800">Logística Carosan</span></h2>
+                
+                <div class="flex flex-wrap gap-2 justify-center md:justify-start mb-8 text-sm">
+                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full border border-gray-200">🎓 Grado Medio SMR (Henri Matisse)</span>
+                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full border border-gray-200">🎓 Grado Superior DAW (CIPFP Cheste)</span>
+                </div>
+
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                    <a href="#proyectos" class="bg-brand text-white px-6 py-3 rounded-xl font-semibold hover:bg-brand-dark transition transform hover:scale-105">Ver mis Proyectos</a>
+                    <a href="https://www.linkedin.com/in/mario-c%C3%A1rcel-navarro-a58ab7314/" target="_blank" class="bg-gray-100 text-gray-800 px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition">Mi LinkedIn</a>
+                </div>
+            </div>
+            <div class="flex-none mt-12 md:mt-0">
+                <div class="w-48 h-48 md:w-64 md:h-64 rounded-full bg-brand-light border-4 border-white shadow-xl flex items-center justify-center overflow-hidden">
+                    <span class="text-8xl text-brand">M</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-3xl font-bold text-brand-navy text-center mb-12">Mis Conocimientos</h3>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transform hover:shadow-md transition">
+                    <div class="text-brand text-4xl mb-4 flex justify-center">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/angularjs/angularjs-original.svg" alt="Angular" class="w-10 h-10"/>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Frontend</h4>
+                    <p class="text-sm text-gray-600">Angular, TailwindCSS, TypeScript, JavaScript, HTML5, CSS3</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transform hover:shadow-md transition">
+                    <div class="text-brand text-4xl mb-4 flex justify-center gap-2">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js" class="w-10 h-10"/>
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="PHP" class="w-10 h-10"/>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Backend</h4>
+                    <p class="text-sm text-gray-600">Node.js, PHP, Java</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transform hover:shadow-md transition">
+                    <div class="text-brand text-4xl mb-4 flex justify-center gap-2">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" alt="MySQL" class="w-10 h-10"/>
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" alt="Docker" class="w-10 h-10"/>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">BD & Infra</h4>
+                    <p class="text-sm text-gray-600">MySQL, MongoDB, Docker, Git</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-2 border-aws transform hover:shadow-lg transition">
+                    <div class="text-aws text-4xl mb-4 flex justify-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" class="h-10"/>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Formación AWS</h4>
+                    <p class="text-sm text-gray-600">Cloud Practitioner</p>
+                    <p class="text-sm text-gray-600">Solutions Architect</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos" class="py-20 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-4xl font-extrabold text-brand-navy text-center mb-4">Proyectos Destacados</h3>
+            <p class="text-gray-600 text-center mb-16 max-w-2xl mx-auto">Una selección de los desarrollos más complejos que he realizado, aplicando lógica de negocio y conectividad con APIs reales.</p>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 flex flex-col group">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="bg-brand-light p-3 rounded-xl text-brand">
+                            🍽️
+                        </div>
+                        <span class="text-xs font-bold text-gray-400">FULL STACK</span>
+                    </div>
+                    <h4 class="text-2xl font-bold text-brand-navy mb-3">MenuWise</h4>
+                    <p class="text-gray-600 mb-6 flex-grow">Menú inteligente que genera automáticamente tu planificación semanal basándose en tus recetas agregadas. Conectado directamente a los productos de la web de Mercadona para facilitar tu compra.</p>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="bg-gray-100 text-xs text-gray-700 px-3 py-1 rounded-full border border-gray-200">API Integration</span>
+                        <span class="bg-gray-100 text-xs text-gray-700 px-3 py-1 rounded-full border border-gray-200">Lógica de Selección</span>
+                        <span class="bg-gray-100 text-xs text-gray-700 px-3 py-1 rounded-full border border-gray-200">Database</span>
+                    </div>
+                    <a href="https://github.com/mario241204/TU_REPO_MENUWISE" target="_blank" class="w-full text-center bg-brand text-white px-5 py-3 rounded-xl font-semibold group-hover:bg-brand-dark transition">Ver Detalles en GitHub</a>
+                    <p class="text-xs text-center text-gray-400 mt-2">* El repositorio puede ser privado.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 flex flex-col group">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="bg-brand-light p-3 rounded-xl text-brand">
+                            💰
+                        </div>
+                        <span class="text-xs font-bold text-gray-400">WEB APP</span>
+                    </div>
+                    <h4 class="text-2xl font-bold text-brand-navy mb-3">SAVIA</h4>
+                    <p class="text-gray-600 mb-6 flex-grow">Plataforma web enfocada en la gestión meticulosa de los gastos del hogar. Diseñada con todo tipo de detalles y categorías para que no se escape ni un céntimo de tu presupuesto.</p>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="bg-gray-100 text-xs text-gray-700 px-3 py-1 rounded-full border border-gray-200">PHP/Java</span>
+                        <span class="bg-gray-100 text-xs text-gray-700 px-3 py-1 rounded-full border border-gray-200">Gestor de Finanzas</span>
+                        <span class="bg-gray-100 text-xs text-gray-700 px-3 py-1 rounded-full border border-gray-200">MySQL</span>
+                    </div>
+                    <a href="https://github.com/mario241204/TU_REPO_SAVIA" target="_blank" class="w-full text-center bg-brand text-white px-5 py-3 rounded-xl font-semibold group-hover:bg-brand-dark transition">Ver Detalles en GitHub</a>
+                    <p class="text-xs text-center text-gray-400 mt-2">* El repositorio puede ser privado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="minijuegos" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-3xl font-bold text-brand-navy text-center mb-12">MiniJuegos <span class="text-gray-400">(JS Puro)</span></h3>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 opacity-75 hover:opacity-100 transition">
+                    <div class="text-4xl mb-3">🎄</div>
+                    <h5 class="font-semibold text-gray-900">Pac-Man Navideño</h5>
+                    <p class="text-xs text-gray-600 mt-1">Lógica de juego y movimiento en canvas.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 opacity-75 hover:opacity-100 transition">
+                    <div class="text-4xl mb-3">⚔️</div>
+                    <h5 class="font-semibold text-gray-900">Combate Pokémon</h5>
+                    <p class="text-xs text-gray-600 mt-1">Sistema de turnos y daño JS.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 opacity-75 hover:opacity-100 transition">
+                    <div class="text-4xl mb-3">🎡</div>
+                    <h5 class="font-semibold text-gray-900">Ruleta Pokémon</h5>
+                    <p class="text-xs text-gray-600 mt-1">Aleatoriedad y animaciones básicas.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 opacity-75 hover:opacity-100 transition">
+                    <div class="text-4xl mb-3">🧪</div>
+                    <h5 class="font-semibold text-gray-900">Parejas Rick&Morty</h5>
+                    <p class="text-xs text-gray-600 mt-1">Consumo de API y lógica de memoria.</p>
+                </div>
+            </div>
+            <p class="text-center text-gray-500 mt-10 text-sm">💡 *Estos juegos están actualmente en mi PC local. Próximamente disponibles.*</p>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-20 bg-brand-navy text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="dotPattern" patternUnits="userSpaceOnUse" width="32" height="32">
+                        <circle cx="1" cy="1" r="1" fill="#fff"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#dotPattern)"/>
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-extrabold mb-4">¡Hablemos!</h3>
+                <p class="text-brand-light max-w-lg mx-auto">Estoy abierto a nuevas oportunidades, colaboraciones o simplemente a charlar sobre código. ¡Conecta conmigo!</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
+                <a href="https://www.linkedin.com/in/mario-c%C3%A1rcel-navarro-a58ab7314/" target="_blank" class="flex items-center gap-4 bg-white/10 px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/20 transition w-72">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-10 h-10"/>
+                    <div>
+                        <span class="block font-bold text-lg">LinkedIn</span>
+                        <span class="block text-sm text-brand-light">Mario Cárcel Navarro</span>
+                    </div>
+                </a>
+                
+                <a href="https://github.com/mario241204" target="_blank" class="flex items-center gap-4 bg-white/10 px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/20 transition w-72">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" alt="GitHub" class="w-10 h-10 invert"/>
+                    <div>
+                        <span class="block font-bold text-lg">GitHub</span>
+                        <span class="block text-sm text-brand-light">@mario241204</span>
+                    </div>
+                </a>
+                
+                <a href="https://www.instagram.com/mario_carcel24" target="_blank" class="flex items-center gap-4 bg-white/10 px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/20 transition w-72">
+                    <span class="text-4xl">📸</span>
+                    <div>
+                        <span class="block font-bold text-lg">Instagram</span>
+                        <span class="block text-sm text-brand-light">@mario_carcel24</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 bg-gray-100 border-t border-gray-200 text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-gray-500 text-sm">
+            &copy; 2024 Mario Cárcel Navarro. Programador Junior enfocado en soluciones eficientes.
+        </div>
+    </footer>
+
+</body>
+</html>
