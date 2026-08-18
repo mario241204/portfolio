@@ -23,6 +23,47 @@
   img{max-width:100%;display:block;}
 
   /* =========================================================
+     FONDO DINÁMICO — manchas de color muy difuminadas
+     derivando despacio, más una rejilla de puntos casi
+     invisible para textura. Nunca protagonista: solo visible
+     donde no hay tarjetas/texto encima.
+     ========================================================= */
+  .bg{position:fixed;inset:0;overflow:hidden;pointer-events:none;}
+  .bg__blob{position:absolute;border-radius:50%;filter:blur(90px);will-change:transform;}
+  .bg__blob--1{
+    width:44vw;height:44vw;top:-14vw;left:-10vw;background:var(--accent);opacity:.22;
+    animation:bgDrift1 26s ease-in-out infinite;
+  }
+  .bg__blob--2{
+    width:38vw;height:38vw;bottom:-12vw;right:-8vw;background:var(--accent-2);opacity:.19;
+    animation:bgDrift2 32s ease-in-out infinite;
+  }
+  .bg__blob--3{
+    width:22vw;height:22vw;top:38%;right:12vw;background:var(--accent);opacity:.15;
+    animation:bgDrift3 21s ease-in-out infinite;
+  }
+  @keyframes bgDrift1{
+    0%,100%{transform:translate(0,0) scale(1);}
+    50%{transform:translate(6vw,5vw) scale(1.12);}
+  }
+  @keyframes bgDrift2{
+    0%,100%{transform:translate(0,0) scale(1);}
+    50%{transform:translate(-5vw,-6vw) scale(1.1);}
+  }
+  @keyframes bgDrift3{
+    0%,100%{transform:translate(0,0) scale(1);}
+    50%{transform:translate(-4vw,4vw) scale(1.18);}
+  }
+  .bg__grid{
+    position:absolute;inset:0;opacity:.05;
+    background-image:radial-gradient(circle,var(--text) 1px,transparent 1.2px);
+    background-size:34px 34px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .bg__blob{animation:none!important;}
+  }
+
+  /* =========================================================
      VENTANA DE EDITOR — el motivo visual que se repite: puntos de
      semáforo + "ruta de fichero" en mono. Es el único adorno que
      nos permitimos, y aparece siempre igual en todas partes.
