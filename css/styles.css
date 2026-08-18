@@ -241,8 +241,9 @@
   .proj-menu__dot{width:5px;height:5px;border-radius:50%;background:var(--accent-2);flex-shrink:0;opacity:0;}
   .proj-menu__item.is-active .proj-menu__dot{opacity:1;}
   .proj-display{flex:1;min-width:0;}
-  .proj-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:opacity .25s var(--ease),transform .25s var(--ease);}
-  .proj-card.is-fading{opacity:0;transform:translateY(6px);}
+  .proj-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:opacity .26s var(--ease),transform .32s var(--ease);}
+  .proj-card.is-out-next{opacity:0;transform:translate(-18px,4px) scale(.985);}
+  .proj-card.is-out-prev{opacity:0;transform:translate(18px,4px) scale(.985);}
   .proj-card__bar{display:flex;align-items:center;justify-content:space-between;padding:.65rem .9rem;border-bottom:1px solid var(--line);background:var(--panel-2);}
   .proj-card__bar .path{font-family:var(--font-mono);font-size:.72rem;color:var(--text-mut);}
   .proj-card__body{padding:1.6rem 1.7rem;}

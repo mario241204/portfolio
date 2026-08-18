@@ -121,26 +121,53 @@
       card.innerHTML = '<div class="proj-card__bar"><span class="chrome-dots"><span></span><span></span><span></span></span><span class="path">proyectos/' + p.title.toLowerCase().replace(/[^a-z0-9]+/g,'_') + '.md</span></div><div class="proj-card__body">' + tag + '<h3>' + p.title + '</h3><p>' + p.desc + '</p>' + tech + links + '</div>';
     }
 
+    function scrollActiveIntoView(){
+      var el = items[cur];
+      if (el && el.scrollIntoView) el.scrollIntoView({ block: 'nearest' });
+    }
+
     function show(i){
       if (switching || i === cur || i < 0 || i >= PROJECTS.length) return;
-      switching = true; cur = i;
+      switching = true;
+      var dir = i > cur ? 'next' : 'prev';
+      cur = i;
       items.forEach(function(el, idx){ el.classList.toggle('is-active', idx === i); });
-      card.classList.add('is-fading');
+      scrollActiveIntoView();
+
+      if (reduced) {
+        renderCard(PROJECTS[i]);
+        switching = false;
+        return;
+      }
+
+      var outClass = dir === 'next' ? 'is-out-next' : 'is-out-prev';
+      var inClass  = dir === 'next' ? 'is-out-prev' : 'is-out-next';
+
+      card.classList.add(outClass);
       setTimeout(function(){
         renderCard(PROJECTS[i]);
-        card.classList.remove('is-fading');
-        switching = false;
-      }, reduced ? 0 : 200);
+        card.classList.remove(outClass);
+        card.style.transition = 'none';
+        card.classList.add(inClass);
+        void card.offsetHeight;
+        card.style.transition = '';
+        requestAnimationFrame(function(){ card.classList.remove(inClass); });
+        setTimeout(function(){ switching = false; }, 320);
+      }, 220);
     }
     items.forEach(function(el){ el.addEventListener('click', function(){ show(parseInt(el.dataset.i, 10)); }); });
 
-    var menuWheelLock = false;
+    var menuWheelBuf = 0, menuWheelCooldown = false;
     menu.addEventListener('wheel', function(e){
       e.preventDefault();
-      if (menuWheelLock) return;
-      menuWheelLock = true;
-      setTimeout(function(){ menuWheelLock = false; }, 180);
-      if (e.deltaY > 0) show(cur + 1); else if (e.deltaY < 0) show(cur - 1);
+      e.stopPropagation();
+      menuWheelBuf += e.deltaY;
+      if (menuWheelCooldown) return;
+      if (menuWheelBuf > 30) { show(cur + 1); menuWheelBuf = 0; }
+      else if (menuWheelBuf < -30) { show(cur - 1); menuWheelBuf = 0; }
+      else return;
+      menuWheelCooldown = true;
+      setTimeout(function(){ menuWheelCooldown = false; }, 160);
     }, { passive: false });
 
     renderCard(PROJECTS[0]);
