@@ -1,245 +1,229 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mario Cárcel - Programador Junior</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            light: '#e0f2fe', // sky-100
-                            DEFAULT: '#0284c7', // sky-600
-                            dark: '#0369a1', // sky-700
-                            navy: '#0c4a6e', // sky-900
-                        },
-                        aws: '#FF9900',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Toque sutil para las barras de desplazamiento */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #0284c7; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #0369a1; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mario · Desarrollador Web & Automatización</title>
+  <meta name="description" content="Portfolio de Mario, desarrollador especializado en automatización de procesos y datos. Proyectos reales en producción." />
+
+  <meta property="og:title" content="Mario · Desarrollador Web & Automatización" />
+  <meta property="og:description" content="Proyectos reales en producción: automatización de procesos, integración de datos y desarrollo web." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0D10'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='30' font-weight='700' fill='%2338D9A9' text-anchor='middle'%3EM.%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+<body>
 
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 shadow-neutral-100">
-                <div class="flex items-center">
-                    <span class="text-2xl font-bold text-brand-navy">Mario<span class="text-brand">Cárcel</span></span>
-                    <span class="ml-3 inline-flex items-center rounded-full bg-brand-light px-2.5 py-0.5 text-xs font-medium text-brand-dark">Junior Dev</span>
-                </div>
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="#inicio" class="text-gray-600 hover:text-brand transition">Inicio</a>
-                    <a href="#proyectos" class="text-gray-600 hover:text-brand transition">Proyectos</a>
-                    <a href="#minijuegos" class="text-gray-600 hover:text-brand transition">MiniJuegos</a>
-                    <a href="#contacto" class="bg-brand text-white px-4 py-2 rounded-lg hover:bg-brand-dark transition">Contacto</a>
-                </div>
-            </div>
+<div class="nav">
+  <div class="nav__logo"><span class="chrome-dots"><span></span><span></span><span></span></span>mario.dev</div>
+  <nav class="nav__links" id="navLinks">
+    <button data-go="1">sobre-mi</button>
+    <button data-go="2">ia</button>
+    <button data-go="3">stack</button>
+    <button data-go="4">formacion</button>
+    <button data-go="5">proyectos</button>
+    <button data-go="6">contacto</button>
+  </nav>
+</div>
+
+<div class="progress" id="progress"></div>
+
+<div class="stage" id="stage">
+  <div class="filmstrip" id="filmstrip">
+
+    <section class="slide hero" id="slide-0">
+      <div class="slide__inner">
+        <div class="tab eyebrow-tab reveal"><span class="chrome-dots"><span></span><span></span><span></span></span><b>hero</b><span class="ext">.tsx</span></div>
+        <h1>
+          <span class="line"><span class="word">Automatizo lo</span></span>
+          <span class="line"><span class="word accent-text">que antes</span></span>
+          <span class="line"><span class="word">era manual.</span></span>
+        </h1>
+        <p class="lead reveal">Desarrollo web y automatización de procesos reales: scraping y descarga desatendida de datos, generación de informes, OCR e integración con bases de datos en producción. Algunos proyectos son demos públicas; otros son herramientas internas que corren cada día sin supervisión.</p>
+        <div class="hero__actions reveal">
+          <button class="btn btn--primary" data-go="5">Ver proyectos</button>
+          <button class="btn btn--ghost" data-go="6">Contactar</button>
         </div>
-    </nav>
-
-    <section id="inicio" class="py-20 bg-white border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
-            <div class="flex-1 text-center md:text-left md:pr-10">
-                <p class="text-brand font-semibold mb-2">Hola, mi nombre es</p>
-                <h1 class="text-5xl md:text-6xl font-extrabold text-brand-navy mb-4">Mario Cárcel</h1>
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-600 mb-6">Programador Junior en <span class="text-gray-800">Logística Carosan</span></h2>
-                
-                <div class="flex flex-wrap gap-2 justify-center md:justify-start mb-8 text-sm">
-                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full border border-gray-200">🎓 Grado Medio SMR (Henri Matisse)</span>
-                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full border border-gray-200">🎓 Grado Superior DAW (CIPFP Cheste)</span>
-                </div>
-
-                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-                    <a href="#proyectos" class="bg-brand text-white px-6 py-3 rounded-xl font-semibold hover:bg-brand-dark transition transform hover:scale-105">Ver mis Proyectos</a>
-                    <a href="https://www.linkedin.com/in/mario-c%C3%A1rcel-navarro-a58ab7314/" target="_blank" class="bg-gray-100 text-gray-800 px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition">Mi LinkedIn</a>
-                </div>
-            </div>
-            <div class="flex-none mt-12 md:mt-0">
-                <div class="w-48 h-48 md:w-64 md:h-64 rounded-full bg-brand-light border-4 border-white shadow-xl flex items-center justify-center overflow-hidden">
-                    <span class="text-8xl text-brand">M</span>
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
 
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-3xl font-bold text-brand-navy text-center mb-12">Mis Conocimientos</h3>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transform hover:shadow-md transition">
-                    <div class="text-brand text-4xl mb-4 flex justify-center">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/angularjs/angularjs-original.svg" alt="Angular" class="w-10 h-10"/>
-                    </div>
-                    <h4 class="font-semibold text-gray-900 mb-2">Frontend</h4>
-                    <p class="text-sm text-gray-600">Angular, TailwindCSS, TypeScript, JavaScript, HTML5, CSS3</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transform hover:shadow-md transition">
-                    <div class="text-brand text-4xl mb-4 flex justify-center gap-2">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js" class="w-10 h-10"/>
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="PHP" class="w-10 h-10"/>
-                    </div>
-                    <h4 class="font-semibold text-gray-900 mb-2">Backend</h4>
-                    <p class="text-sm text-gray-600">Node.js, PHP, Java</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transform hover:shadow-md transition">
-                    <div class="text-brand text-4xl mb-4 flex justify-center gap-2">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" alt="MySQL" class="w-10 h-10"/>
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" alt="Docker" class="w-10 h-10"/>
-                    </div>
-                    <h4 class="font-semibold text-gray-900 mb-2">BD & Infra</h4>
-                    <p class="text-sm text-gray-600">MySQL, MongoDB, Docker, Git</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border-2 border-aws transform hover:shadow-lg transition">
-                    <div class="text-aws text-4xl mb-4 flex justify-center">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" class="h-10"/>
-                    </div>
-                    <h4 class="font-semibold text-gray-900 mb-2">Formación AWS</h4>
-                    <p class="text-sm text-gray-600">Cloud Practitioner</p>
-                    <p class="text-sm text-gray-600">Solutions Architect</p>
-                </div>
-            </div>
+    <section class="slide about" id="slide-1">
+      <div class="slide__inner">
+        <div class="tab eyebrow-tab reveal"><span class="chrome-dots"><span></span><span></span><span></span></span><b>about</b><span class="ext">.md</span></div>
+        <div class="two-col">
+          <div>
+            <h2 class="sec-title reveal">Hola, soy <span class="accent-text">Mario</span>.</h2>
+            <p class="reveal">Desarrollador con formación en DAW y experiencia real construyendo automatizaciones que hoy corren en producción: descarga y procesado de datos sin intervención humana, generación de informes, integración con APIs externas y bases de datos, y sistemas de detección de errores para que nadie tenga que enterarse de un fallo por accidente.</p>
+            <p class="reveal">Lo que más disfruto es transformar procesos manuales en automatizaciones fiables, y diagnosticar por qué algo falla — condiciones de carrera, datos duplicados, fallos silenciosos — hasta dejarlo resuelto y verificado, no solo "parcheado". Ahora mismo estoy abierto a oportunidades como desarrollador con foco en automatización e integración de datos.</p>
+          </div>
+          <div class="facts reveal">
+            <div class="fact"><span class="fact__num">5+</span><span class="fact__label">Automatizaciones en producción</span></div>
+            <div class="fact"><span class="fact__num">24/7</span><span class="fact__label">Procesos desatendidos, sin supervisión</span></div>
+            <div class="fact"><span class="fact__num">DAW</span><span class="fact__label">Desarrollo de Aplicaciones Web</span></div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section id="proyectos" class="py-20 bg-white border-y border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-4xl font-extrabold text-brand-navy text-center mb-4">Proyectos Destacados</h3>
-            <p class="text-gray-600 text-center mb-16 max-w-2xl mx-auto">Una selección de los desarrollos más complejos que he realizado, aplicando lógica de negocio y conectividad con APIs reales.</p>
-            
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 flex flex-col group">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="bg-brand-light p-3 rounded-xl text-brand">
-                            🍽️
-                        </div>
-                        <span class="text-xs font-bold text-gray-400">FULL STACK</span>
-                    </div>
-                    <h4 class="text-2xl font-bold text-brand-navy mb-3">MenuWise</h4>
-                    <p class="text-gray-600 mb-6 flex-grow">Menú inteligente que genera automáticamente tu planificación semanal basándose en tus recetas agregadas. Conectado directamente a los productos de la web de Mercadona para facilitar tu compra.</p>
-                    <div class="flex flex-wrap gap-2 mb-8">
-                        <span class="bg-gray-100 text-xs text-gray-700 px-3 py-1 rounded-full border border-gray-200">API Integration</span>
-                        <span class="bg-gray-100 text-xs text-gray-700 px-3 py-1 rounded-full border border-gray-200">Lógica de Selección</span>
-                        <span class="bg-gray-100 text-xs text-gray-700 px-3 py-1 rounded-full border border-gray-200">Database</span>
-                    </div>
-                    <a href="https://github.com/mario241204/TU_REPO_MENUWISE" target="_blank" class="w-full text-center bg-brand text-white px-5 py-3 rounded-xl font-semibold group-hover:bg-brand-dark transition">Ver Detalles en GitHub</a>
-                    <p class="text-xs text-center text-gray-400 mt-2">* El repositorio puede ser privado.</p>
-                </div>
-
-                <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 flex flex-col group">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="bg-brand-light p-3 rounded-xl text-brand">
-                            💰
-                        </div>
-                        <span class="text-xs font-bold text-gray-400">WEB APP</span>
-                    </div>
-                    <h4 class="text-2xl font-bold text-brand-navy mb-3">SAVIA</h4>
-                    <p class="text-gray-600 mb-6 flex-grow">Plataforma web enfocada en la gestión meticulosa de los gastos del hogar. Diseñada con todo tipo de detalles y categorías para que no se escape ni un céntimo de tu presupuesto.</p>
-                    <div class="flex flex-wrap gap-2 mb-8">
-                        <span class="bg-gray-100 text-xs text-gray-700 px-3 py-1 rounded-full border border-gray-200">PHP/Java</span>
-                        <span class="bg-gray-100 text-xs text-gray-700 px-3 py-1 rounded-full border border-gray-200">Gestor de Finanzas</span>
-                        <span class="bg-gray-100 text-xs text-gray-700 px-3 py-1 rounded-full border border-gray-200">MySQL</span>
-                    </div>
-                    <a href="https://github.com/mario241204/TU_REPO_SAVIA" target="_blank" class="w-full text-center bg-brand text-white px-5 py-3 rounded-xl font-semibold group-hover:bg-brand-dark transition">Ver Detalles en GitHub</a>
-                    <p class="text-xs text-center text-gray-400 mt-2">* El repositorio puede ser privado.</p>
-                </div>
+    <section class="slide ia" id="slide-2">
+      <div class="slide__inner">
+        <div class="tab eyebrow-tab reveal"><span class="chrome-dots"><span></span><span></span><span></span></span><b>ia</b><span class="ext">.md</span></div>
+        <div class="two-col">
+          <div>
+            <h2 class="sec-title reveal">Programar con IA como parte del oficio</h2>
+            <p class="reveal">Los avances de estos últimos años en Inteligencia Artificial han cambiado cómo trabajo como desarrollador. He usado las IAs generalistas más conocidas (ChatGPT, Gemini), pero mi mejor descubrimiento sin duda ha sido empezar a usar Claude Code — ha sido con lo que realmente he despegado como programador. Me ha permitido reforzar mi perfil como desarrollador Full Stack, con capacidad real de adaptarme a distintos entornos tanto en frontend como en backend.</p>
+            <p class="reveal">En mi ámbito laboral actual he ido más allá del uso puntual: he construido un "cerebro" local para mi IA combinando Claude Code con Obsidian como base de conocimiento persistente, de forma que no parte de cero en cada sesión — recuerda contexto, decisiones y el histórico de cada proyecto.</p>
+          </div>
+          <div class="editor-card reveal">
+            <div class="editor-card__bar"><span class="chrome-dots"><span></span><span></span><span></span></span><span class="path">flujo_trabajo.json</span></div>
+            <div class="editor-card__body">
+              <span class="editor-card__label">Mi flujo de trabajo</span>
+              <p>Claude Code + Obsidian como memoria persistente: contexto, decisiones e incidencias de cada proyecto disponibles sesión tras sesión, en vez de partir de cero cada vez.</p>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section id="minijuegos" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-3xl font-bold text-brand-navy text-center mb-12">MiniJuegos <span class="text-gray-400">(JS Puro)</span></h3>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 opacity-75 hover:opacity-100 transition">
-                    <div class="text-4xl mb-3">🎄</div>
-                    <h5 class="font-semibold text-gray-900">Pac-Man Navideño</h5>
-                    <p class="text-xs text-gray-600 mt-1">Lógica de juego y movimiento en canvas.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 opacity-75 hover:opacity-100 transition">
-                    <div class="text-4xl mb-3">⚔️</div>
-                    <h5 class="font-semibold text-gray-900">Combate Pokémon</h5>
-                    <p class="text-xs text-gray-600 mt-1">Sistema de turnos y daño JS.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 opacity-75 hover:opacity-100 transition">
-                    <div class="text-4xl mb-3">🎡</div>
-                    <h5 class="font-semibold text-gray-900">Ruleta Pokémon</h5>
-                    <p class="text-xs text-gray-600 mt-1">Aleatoriedad y animaciones básicas.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 opacity-75 hover:opacity-100 transition">
-                    <div class="text-4xl mb-3">🧪</div>
-                    <h5 class="font-semibold text-gray-900">Parejas Rick&Morty</h5>
-                    <p class="text-xs text-gray-600 mt-1">Consumo de API y lógica de memoria.</p>
-                </div>
+    <section class="slide stack" id="slide-3">
+      <div class="slide__inner">
+        <div class="tab eyebrow-tab reveal"><span class="chrome-dots"><span></span><span></span><span></span></span><b>stack</b><span class="ext">.json</span></div>
+        <h2 class="sec-title reveal">Herramientas con las que trabajo</h2>
+        <div class="stack__groups">
+
+          <div class="stack__group reveal">
+            <div class="stack__group-tab"><span class="cmt">//</span><b>lenguajes</b><span class="ext">.ts</span></div>
+            <div class="stack__grid">
+              <span class="chip">PHP</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">Java</span>
+              <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">PowerShell</span>
             </div>
-            <p class="text-center text-gray-500 mt-10 text-sm">💡 *Estos juegos están actualmente en mi PC local. Próximamente disponibles.*</p>
+          </div>
+
+          <div class="stack__group reveal">
+            <div class="stack__group-tab"><span class="cmt">//</span><b>frameworks</b><span class="ext">.js</span></div>
+            <div class="stack__grid">
+              <span class="chip">Node.js</span><span class="chip">Angular</span>
+            </div>
+          </div>
+
+          <div class="stack__group reveal">
+            <div class="stack__group-tab"><span class="cmt">//</span><b>bases_datos</b><span class="ext">.sql</span></div>
+            <div class="stack__grid">
+              <span class="chip">MySQL</span><span class="chip">SQLite</span><span class="chip">MongoDB</span><span class="chip">Supabase</span>
+            </div>
+          </div>
+
+          <div class="stack__group reveal">
+            <div class="stack__group-tab"><span class="cmt">//</span><b>ia</b><span class="ext">.md</span></div>
+            <div class="stack__grid">
+              <span class="chip">ChatGPT</span><span class="chip">Gemini Pro</span><span class="chip">Claude</span><span class="chip">Claude Code</span>
+              <span class="chip">Cursor</span><span class="chip">Antigravity</span><span class="chip">Lovable</span><span class="chip">Gamma</span>
+            </div>
+          </div>
+
+          <div class="stack__group reveal">
+            <div class="stack__group-tab"><span class="cmt">//</span><b>herramientas</b><span class="ext">.sh</span></div>
+            <div class="stack__grid">
+              <span class="chip">Selenium / WebDriver</span><span class="chip">REST APIs</span><span class="chip">OCR (Tesseract)</span>
+              <span class="chip">Automatización de Excel</span><span class="chip">Figma</span><span class="chip">Git</span>
+              <span class="chip">GitHub</span><span class="chip">Docker</span><span class="chip">Obsidian</span>
+            </div>
+          </div>
+
+          <div class="stack__group reveal">
+            <div class="stack__group-tab"><span class="cmt">//</span><b>entorno_real</b><span class="ext">.env</span> <span class="note">— aprendido en el puesto, no en el título</span></div>
+            <div class="stack__grid">
+              <span class="chip chip--work">Mecalux / EasyWMS</span><span class="chip chip--work">Microsoft Entra ID</span><span class="chip chip--work">Microsoft Intune</span>
+            </div>
+          </div>
+
         </div>
+
+      </div>
     </section>
 
-    <section id="contacto" class="py-20 bg-brand-navy text-white relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <pattern id="dotPattern" patternUnits="userSpaceOnUse" width="32" height="32">
-                        <circle cx="1" cy="1" r="1" fill="#fff"/>
-                    </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#dotPattern)"/>
-            </svg>
-        </div>
+    <section class="slide formacion" id="slide-4">
+      <div class="slide__inner">
+        <div class="tab eyebrow-tab reveal"><span class="chrome-dots"><span></span><span></span><span></span></span><b>formacion</b><span class="ext">.md</span></div>
+        <h2 class="sec-title reveal">Cursos y certificaciones</h2>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16">
-                <h3 class="text-4xl font-extrabold mb-4">¡Hablemos!</h3>
-                <p class="text-brand-light max-w-lg mx-auto">Estoy abierto a nuevas oportunidades, colaboraciones o simplemente a charlar sobre código. ¡Conecta conmigo!</p>
+        <div class="formacion__groups">
+          <div class="stack__group reveal">
+            <div class="stack__group-tab"><span class="cmt">//</span><b>certificaciones</b><span class="ext">.pdf</span></div>
+            <div class="cert-grid cert-grid--row">
+              <a class="cert-card" href="https://www.credly.com/badges/b91d7ff2-1b6c-442c-ac3a-9bd59225b6e4" target="_blank" rel="noopener">
+                <span class="cert-card__badge">AWS</span>
+                <span class="cert-card__text">
+                  <span class="cert-card__title">AWS Academy Graduate — Cloud Foundations</span>
+                  <span class="cert-card__issuer">Verificar en Credly ↗</span>
+                </span>
+              </a>
+              <a class="cert-card" href="https://www.credly.com/badges/d59655ec-c62b-4d2a-b929-49ad80b747ba" target="_blank" rel="noopener">
+                <span class="cert-card__badge">AWS</span>
+                <span class="cert-card__text">
+                  <span class="cert-card__title">AWS Academy Graduate — Cloud Developing</span>
+                  <span class="cert-card__issuer">Verificar en Credly ↗</span>
+                </span>
+              </a>
             </div>
-            
-            <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
-                <a href="https://www.linkedin.com/in/mario-c%C3%A1rcel-navarro-a58ab7314/" target="_blank" class="flex items-center gap-4 bg-white/10 px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/20 transition w-72">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-10 h-10"/>
-                    <div>
-                        <span class="block font-bold text-lg">LinkedIn</span>
-                        <span class="block text-sm text-brand-light">Mario Cárcel Navarro</span>
-                    </div>
-                </a>
-                
-                <a href="https://github.com/mario241204" target="_blank" class="flex items-center gap-4 bg-white/10 px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/20 transition w-72">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" alt="GitHub" class="w-10 h-10 invert"/>
-                    <div>
-                        <span class="block font-bold text-lg">GitHub</span>
-                        <span class="block text-sm text-brand-light">@mario241204</span>
-                    </div>
-                </a>
-                
-                <a href="https://www.instagram.com/mario_carcel24" target="_blank" class="flex items-center gap-4 bg-white/10 px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/20 transition w-72">
-                    <span class="text-4xl">📸</span>
-                    <div>
-                        <span class="block font-bold text-lg">Instagram</span>
-                        <span class="block text-sm text-brand-light">@mario_carcel24</span>
-                    </div>
-                </a>
+          </div>
+
+          <div class="stack__group reveal">
+            <div class="stack__group-tab"><span class="cmt">//</span><b>formacion_academica</b><span class="ext">.md</span> <span class="note">— diploma físico pendiente de emitir</span></div>
+            <div class="cert-grid cert-grid--row">
+              <div class="cert-card cert-card--static">
+                <span class="cert-card__badge cert-card__badge--edu">GS</span>
+                <span class="cert-card__text">
+                  <span class="cert-card__title">Grado Superior · Desarrollo de Aplicaciones Web</span>
+                  <span class="cert-card__issuer">CIPFP Complejo Educativo Cheste · 2024–2026</span>
+                </span>
+              </div>
+              <div class="cert-card cert-card--static">
+                <span class="cert-card__badge cert-card__badge--edu">GM</span>
+                <span class="cert-card__text">
+                  <span class="cert-card__title">Grado Medio · Sistemas Microinformáticos y Redes</span>
+                  <span class="cert-card__issuer">IES Henri Matisse, Paterna · 2021–2023</span>
+                </span>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <footer class="py-8 bg-gray-100 border-t border-gray-200 text-center">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-gray-500 text-sm">
-            &copy; 2024 Mario Cárcel Navarro. Programador Junior enfocado en soluciones eficientes.
+    <section class="slide projects" id="slide-5">
+      <div class="slide__inner">
+        <div class="tab eyebrow-tab reveal"><span class="chrome-dots"><span></span><span></span><span></span></span><b>proyectos</b><span class="ext">.ts</span></div>
+        <div class="proj-layout reveal">
+          <nav class="proj-menu" id="projMenu"></nav>
+          <div class="proj-display"><div class="proj-card" id="projCard"></div></div>
         </div>
-    </footer>
+      </div>
+    </section>
 
+    <section class="slide contact" id="slide-6">
+      <div class="slide__inner">
+        <div class="tab eyebrow-tab reveal"><span class="chrome-dots"><span></span><span></span><span></span></span><b>contacto</b><span class="ext">.sh</span></div>
+        <h2 class="reveal">¿Hablamos?</h2>
+        <p class="lead reveal">Actualmente estoy en búsqueda de empleo como desarrollador web o automatizador de procesos. La forma más rápida de llegar a mí:</p>
+        <div class="contact__links reveal">
+          <a href="mailto:mariocarce24@gmail.com" class="contact__link"><span class="lbl">Email</span>mariocarce24@gmail.com</a>
+          <a href="https://github.com/mario241204" target="_blank" rel="noopener" class="contact__link"><span class="lbl">GitHub</span>github.com/mario241204</a>
+          <a href="https://www.linkedin.com/in/mario-c%C3%A1rcel-navarro-a58ab7314/" target="_blank" rel="noopener" class="contact__link"><span class="lbl">LinkedIn</span>linkedin.com/in/mario-cárcel-navarro</a>
+        </div>
+        <div class="contact__foot reveal"><span>© 2026 Mario</span><span>exit 0 — hecho con HTML, CSS y JS</span></div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script src="js/main.js"></script>
 </body>
 </html>
