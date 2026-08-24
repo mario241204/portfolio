@@ -271,6 +271,7 @@
     background:linear-gradient(135deg,#FF9900,#232F3E);font-family:var(--font-mono);font-weight:700;font-size:.62rem;color:#fff;
   }
   .cert-card__badge--edu{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:var(--ink);}
+  .cert-card__badge--postman{background:linear-gradient(135deg,#FF6C37,#CC5429);color:#fff;}
   .cert-card__text{display:flex;flex-direction:column;gap:.15rem;min-width:0;}
   .cert-card__title{font-size:.82rem;color:var(--text);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .cert-card__issuer{font-family:var(--font-mono);font-size:.68rem;color:var(--text-dim);}
